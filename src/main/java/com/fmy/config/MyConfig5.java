@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2018/12/24 16:15
  */
 @Configuration
+@Conditional({LinuxConditional.class})
 public class MyConfig5 {
 
     @Bean

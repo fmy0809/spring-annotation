@@ -2,6 +2,7 @@ import com.fmy.config.*;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.env.ConfigurableEnvironment;
 
 /**
  * @author ws47033
@@ -65,5 +66,18 @@ public class MyTest {
         for(String name:beanDefinitionNames){
             System.out.println("beanName:"+name);
         }
+    }
+
+    @Test
+    public void test6(){
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MyConfig6.class);
+        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        for(String name:beanDefinitionNames){
+            System.out.println("beanName:"+name);
+        }
+        ConfigurableEnvironment environment = applicationContext.getEnvironment();
+        String property = environment.getProperty("brand");
+        System.out.println("property:"+property);
+        System.out.println(applicationContext.getBean("car"));
     }
 }
