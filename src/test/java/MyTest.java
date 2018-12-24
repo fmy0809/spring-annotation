@@ -1,6 +1,4 @@
-import com.fmy.config.MyConfig1;
-import com.fmy.config.MyConfig2;
-import com.fmy.config.MyConfig3;
+import com.fmy.config.*;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -48,4 +46,24 @@ public class MyTest {
         }
     }
 
+    @Test
+    public void test4(){
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MyConfig4.class);
+        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        for(String name:beanDefinitionNames){
+            System.out.println("beanName:"+name);
+        }
+
+        System.out.println(applicationContext.getBean("personFactoryBean"));
+        System.out.println(applicationContext.getBean("&personFactoryBean"));
+    }
+
+    @Test
+    public void test5(){
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MyConfig5.class);
+        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        for(String name:beanDefinitionNames){
+            System.out.println("beanName:"+name);
+        }
+    }
 }
