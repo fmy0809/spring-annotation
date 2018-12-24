@@ -1,0 +1,19 @@
+为什么要讲这个，第一，自己能力有限，也只能讲点基础，第二，我们小组有一般都是。net转过来的，应该对spring也没有专门学过，
+
+1.IOC,控制反转，举例，car，平时要new，有了spring，都交给spring创建配置和管理
+2.DI。依赖注入，举例，car依赖发动机，
+IOC,DI的好处，不用关心Bean如何创建，降低了代码的耦合性（高内聚，低耦合）
+3.在看一些文章的时候总是会有一些名词像，spring容器，IOC容器，应用上下文等，听起来感觉都是比较抽象的概念，
+但是你要是想对号入座的话，可以把这些名词理解为BeanFactory就是说这个对象就是容器，这个对象就是应用上下文，
+然后还有个BeanFactory是跟它有什么关联，BeanFactory是最顶层的容器，它是一个接口，提供了一些简单的方法，ApplicationContext继承于这个接口，
+扩展了Aop，事件发布、国际化，特定应用的上下文等，如WebApplicationContext
+讲解类图
+
+4.ApplicationContext
+getBean查看一下Bean所在位置
+扩展讲解一下调试工具使用，
+
+5.基于xml方式创建Bean演示
+  基于注解的方式创建Bean演示
+
+6
