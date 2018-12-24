@@ -1,4 +1,6 @@
 import com.fmy.config.*;
+import com.fmy.controller.UserController;
+import com.fmy.service.UserService;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -79,5 +81,21 @@ public class MyTest {
         String property = environment.getProperty("brand");
         System.out.println("property:"+property);
         System.out.println(applicationContext.getBean("car"));
+    }
+
+    @Test
+    public void test7(){
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MyConfig7.class);
+        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        for(String name:beanDefinitionNames){
+            System.out.println("beanName:"+name);
+        }
+        System.out.println(applicationContext.getBean(UserController.class));
+        System.out.println(applicationContext.getBean(UserService.class));
+
+
+
+
+
     }
 }
