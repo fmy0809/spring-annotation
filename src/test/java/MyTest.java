@@ -93,9 +93,16 @@ public class MyTest {
         System.out.println(applicationContext.getBean(UserController.class));
         System.out.println(applicationContext.getBean(UserService.class));
 
+    }
 
 
 
+    @Test
+    public void test8(){
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MyConfig8.class);
 
+        System.out.println("容器初始化完毕！");
+
+        applicationContext.close();
     }
 }
