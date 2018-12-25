@@ -1,6 +1,7 @@
 package com.fmy.config;
 
 
+import com.fmy.bean.Car;
 import com.fmy.bean.Linux;
 import com.fmy.bean.Person;
 import com.fmy.bean.Windows;
@@ -9,6 +10,7 @@ import com.fmy.ext.WindowsConditional;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 
 /**
@@ -34,6 +36,12 @@ public class MyConfig5 {
     @Bean
     public Person person(){
         return new Person();
+    }
+
+    @Bean
+    @Profile("dev")
+    public Car car(){
+        return new Car();
     }
 
 }
